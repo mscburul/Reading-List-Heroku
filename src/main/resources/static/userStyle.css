@@ -1,0 +1,17 @@
+body{
+    background: azure;
+    font-family: "arial","helvetica","sans-serif";
+}
+
+.userHeadline{
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.usersList{
+    font-size: 12pt;
+}
+
+label{
+    font-weight: bold;
+}
