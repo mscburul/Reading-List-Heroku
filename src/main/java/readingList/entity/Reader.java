@@ -16,7 +16,7 @@ public class Reader implements UserDetails{
 
         @Id
         private String username;
-        private String fullname;
+        private String fullName;
         private String password;
 
     @Override
@@ -28,12 +28,12 @@ public class Reader implements UserDetails{
         this.username = username;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     @Override

@@ -59,8 +59,4 @@ public class ReadingListController {
 
 
 
-    /*@RequestMapping(value = "/{reader}", method = RequestMethod.GET)
-    public String updateBookInfo(@PathVariable("reader") String author, Book book) {
-        List<Book> oneBook = readingListRepository.findBookByAuthor(author);
-    }*/
-}
+   }
