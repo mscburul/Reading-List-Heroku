@@ -12,12 +12,12 @@ import java.util.Collection;
 @Entity
 public class Reader implements UserDetails{
 
-        private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-        @Id
-        private String username;
-        private String fullName;
-        private String password;
+    @Id
+    private String username;
+    private String fullName;
+    private String password;
 
     @Override
     public String getUsername() {
