@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import readingList.entity.Book;
-import readingList.entity.Reader;
 import readingList.repository.ReadingListRepository;
 
 
@@ -25,21 +24,23 @@ public class ReadingListController {
         this.readingListRepository = readingListRepository;
           }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String readersBook(Reader reader, Model model){
+    @RequestMapping(value="/{reader}", method= RequestMethod.GET)
+    public String readersBooks(@PathVariable("reader") String reader, Model model) {
         List<Book> readingList = readingListRepository.findByReader(reader);
-        if (readingList != null){
-            model.addAttribute("books",readingList);
+
+        if (readingList != null) {
+            model.addAttribute("books", readingList);
         }
         return "readingList";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String addToReadingList(Reader reader, Book book){
+    @RequestMapping(value="/{reader}", method=RequestMethod.POST)
+    public String addToReadingList(@PathVariable("reader") String reader, Book book) {
         book.setReader(reader);
         readingListRepository.save(book);
-        return "redirect:/";
+        return "redirect:/{reader}";
     }
+
 
     @RequestMapping(value = "/book/{id}", method = RequestMethod.GET)
     public String readersBookDetail(@PathVariable Long id, Model model){
